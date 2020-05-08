@@ -33,9 +33,9 @@ imgArray= [['./assets/carousel/mountains.jpeg','mountains'],
   addCaro = () => {
   //elements
   carousel = make('div');
-  btnLeft = make('div');
+  btnLeft = make('i');
   img = make('img');
-  btnRight = make('div');
+  btnRight = make('i');
 
   //structure
   carousel.appendChild(btnLeft);
@@ -44,16 +44,14 @@ imgArray= [['./assets/carousel/mountains.jpeg','mountains'],
 
   //classes
   carousel.classList.add('carousel');
-  btnLeft.classList.add('left-button');
-  btnRight.classList.add('right-button');
+  btnLeft.classList.add('fa-arrow-left', 'left-button', 'fas');
+  btnRight.classList.add('fa-arrow-right', 'right-button', 'fas');
   img.classList.add('img-show');
 
   //content
   imgIndex = 0;
   img.src = imgArray[imgIndex][0];
   // console.log(imgArray)
-  btnRight.textContent = '>';
-  btnLeft.textContent = '<';
 
   //eventlisteners
   btnLeft.addEventListener('click', () => {
