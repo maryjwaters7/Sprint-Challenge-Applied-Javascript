@@ -52,9 +52,8 @@ imgArray= [['./assets/carousel/mountains.jpeg','mountains'],
   imgIndex = 0;
   img.src = imgArray[imgIndex][0];
   // console.log(imgArray)
-  // btnLeft.text = 
   btnRight.textContent = '>';
-  btnLeft.textContent = '<'
+  btnLeft.textContent = '<';
 
   //eventlisteners
   btnLeft.addEventListener('click', () => {
