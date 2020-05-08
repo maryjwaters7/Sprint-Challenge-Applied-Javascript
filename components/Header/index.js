@@ -11,7 +11,7 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function make(se;ectpr) {
+function make(selector) {
     return document.createElement(selector);
 }
 
