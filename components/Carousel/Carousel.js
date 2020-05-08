@@ -17,3 +17,65 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function make(selector) {
+  return document.createElement(selector);
+};
+
+const caroEntry = document.querySelector('.carousel-container')
+console.log(caroEntry)
+
+imgArray= [['./assets/carousel/mountains.jpeg','mountains'],
+['./assets/carousel/computer.jpeg','computer'],
+['./assets/carousel/trees.jpeg','trees'],
+['./assets/carousel/turntable.jpeg','turntable']]
+
+  addCaro = () => {
+  //elements
+  carousel = make('div');
+  btnLeft = make('div');
+  img = make('img');
+  btnRight = make('div');
+
+  //structure
+  carousel.appendChild(btnLeft);
+  carousel.appendChild(img);
+  carousel.appendChild(btnRight);
+
+  //classes
+  carousel.classList.add('carousel');
+  btnLeft.classList.add('left-button');
+  btnRight.classList.add('right-button');
+  img.classList.add('img-show');
+
+  //content
+  imgIndex = 0;
+  img.src = imgArray[imgIndex][0];
+  // console.log(imgArray)
+  btnRight.textContent = '>';
+  btnLeft.textContent = '<';
+
+  //eventlisteners
+  btnLeft.addEventListener('click', () => {
+    if(imgIndex === 0){
+      imgIndex = imgArray.length - 1
+    }else{
+      imgIndex--
+    }
+    img.src = imgArray[imgIndex][0]
+  });
+
+  btnRight.addEventListener('click', () => {
+    if(imgIndex === imgArray.length - 1){
+      imgIndex = 0
+    }else{
+      imgIndex++
+    }
+    img.src = imgArray[imgIndex][0]
+  });
+
+
+  return carousel
+}
+
+caroEntry.appendChild(addCaro())
